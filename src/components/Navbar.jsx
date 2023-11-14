@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "@/assets/logo.svg";
+import logoWhite from "@/assets/logoWhite.svg";
+import Footer from "@/components/Footer";
 
 import { MdNightsStay, MdWbSunny } from "react-icons/md";
 
@@ -37,17 +39,27 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     },
   ];
 
+  let x = "";
+
+  isMenuShown
+    ? (x = "url(https://i.ibb.co/Nyx1ymR/13237365-BG-1.jpg)")
+    : (x = "");
+
   return (
     <>
       <div
         style={{
-          backgroundImage:
-            "url(https://s24.q4cdn.com/382246808/files/doc_downloads/2021/01/indigenous-community-relations_banner.jpg)",
+          backgroundImage: x,
         }}
-        className="fixed w-full h-16  text-black z-20  "
+        className="fixed w-full h-16 text-black z-40  "
       >
         <div className="flex justify-end  md:gap-5 items-center max-w-screen-xl mx-auto px-8 h-full">
-          <img src={logo} alt="" />
+          {isMenuShown ? (
+            <img src={logo} alt="" />
+          ) : (
+            <img src={logoWhite} alt="" />
+          )}
+
           <div
             onClick={() => setIsMenuShown(!isMenuShown)}
             className="cursor-pointer"
@@ -69,14 +81,13 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
       <div
         style={{
-          backgroundImage:
-            "url(https://s24.q4cdn.com/382246808/files/doc_downloads/2021/01/indigenous-community-relations_banner.jpg)",
+          backgroundImage: "url(https://i.ibb.co/Nyx1ymR/13237365-BG-1.jpg)",
         }}
-        className={`fixed w-full   text-black z-10 left-0 h-screen py-12 flex justify-end px-40 text-right text-2xl duration-500 ${
-          isMenuShown ? "top-16 rounded-b-2xl  " : "top-[100%]"
+        className={`z-50 fixed w-full  text-black left-0 h-screen  flex flex-col justify-between  text-right text-2xl duration-500   ${
+          isMenuShown ? "top-16 rounded-b-2xl " : "top-[100%]"
         }`}
       >
-        <ul className="">
+        <ul className="px-40">
           {links.map(({ id, link }) => (
             <li
               key={id}
@@ -94,6 +105,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </Link> */
           ))}
         </ul>
+        <div className="my-12">
+          <Footer />
+        </div>
       </div>
     </>
   );
