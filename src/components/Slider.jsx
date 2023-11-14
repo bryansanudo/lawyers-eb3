@@ -10,33 +10,33 @@ const Slider = () => {
   const slides = [
     {
       id: 1,
-      name: "Chula Vista",
+      name: "Q3 TRENDS TO WATCH",
       description:
-        "Chula Vista Resort offers over 200,000 square feet of water parks, top-notch spas, culinary delights in one of the most outstanding chophouses in the USA, and even an 18-hole golf course!",
+        "In Q3 2023, the consumer packaged goods (CPG) industry continued to face a substantial threat of class-action activity, with continued filings against companies in the food, beverage, and personal care spaces. Recent months have also seen significant regulatory developments on both the federal and state levels.",
       image: Image1,
-      from: "from-[#A9DEF8]",
+      from: "from-[#000000]",
     },
     {
       id: 2,
-      name: "Chula Vista",
+      name: "MAXIMIZE RECOVERY, MINIMIZE LOSS",
       description:
-        "Chula Vista Resort offers over 200,000 square feet of water parks, top-notch spas, culinary delights in one of the most outstanding chophouses in the USA, and even an 18-hole golf course!",
+        "When a hurricane hits, some of the most significant losses involve interruption to normal business operations. First-party property coverage can protect businesses in such losses, yet this insurance is among the most complicated. Perkins Coie’s Insurance Recovery team assists policyholders with first-party property coverage and is available to guide policyholders.",
       image: Image2,
-      from: "from-[#951719]",
+      from: "from-[#000000]",
     },
     {
       id: 3,
-      name: "Chula Vista",
+      name: "LEGAL EXECELLENCE",
       description:
-        "Chula Vista Resort offers over 200,000 square feet of water parks, top-notch spas, culinary delights in one of the most outstanding chophouses in the USA, and even an 18-hole golf course!",
+        "Law360 has recognized Perkins Coie as a Regional Powerhouse law firm for delivering litigation success to its clients across the Pacific Northwest and for providing AI-related counsel to global technology clients, among other aspects of the firm's legal work.",
       image: Image3,
-      from: "from-[#53FDFC]",
+      from: "from-[#000000]",
     },
     {
       id: 4,
-      name: "Chula Vista",
+      name: "MIDYEAR TRENDS TO WATCH",
       description:
-        "Chula Vista Resort offers over 200,000 square feet of water parks, top-notch spas, culinary delights in one of the most outstanding chophouses in the USA, and even an 18-hole golf course!",
+        "In the first half of 2023, the consumer packaged goods (CPG) industry continued to face a substantial threat of class-action activity, with continued filings against companies in the food, beverage, and personal care spaces. Recent months have also seen significant regulatory developments on both the federal and state levels.",
       image: Image4,
       from: "from-[#000000]",
     },
@@ -114,9 +114,15 @@ const Slider = () => {
             zIndex: -1, // Coloca el gradiente detrás del contenido
           }}
         ></div>
-        <div className="max-w-[500px] ml-40">
-          <p className="font-bold text-7xl">{slides[currentIndex].name}</p>
-          <p>{slides[currentIndex].description}</p>
+        <div className=" ml-40">
+          <p className="font-bold text-7xl max-w-[1000px] mb-6">
+            {slides[currentIndex].name}
+          </p>
+          <p className="max-w-[500px]">{slides[currentIndex].description}</p>
+          <div className="mt-6 flex items-center gap-2 hover:text-primary">
+            <p className="uppercase font-bold ">learn more</p>
+            <BsChevronCompactRight />
+          </div>
         </div>
       </div>
 
