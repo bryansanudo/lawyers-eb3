@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "@/assets/logo.svg";
-import logoWhite from "@/assets/logoWhite.svg";
+import logo from "@/assets/logo.png";
+import logoWhite from "@/assets/logoWhite.png";
 import Footer from "@/components/Footer";
 
 import { MdNightsStay, MdWbSunny } from "react-icons/md";
@@ -55,9 +55,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       >
         <div className="flex justify-end  md:gap-5 items-center max-w-screen-xl mx-auto px-8 h-full">
           {isMenuShown ? (
-            <img src={logo} alt="" />
+            <img src={logo} className="w-40 h-40 object-contain" alt="" />
           ) : (
-            <img src={logoWhite} alt="" />
+            <img src={logoWhite} className="w-40 h-40 object-contain" alt="" />
           )}
 
           <div
@@ -65,13 +65,13 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             className="cursor-pointer"
           >
             {isMenuShown ? (
-              <div>
-                <FaTimes size={30} className="text-red-500 hover:text-black" />
+              <div className="flex items-center gap-2 justify-between">
+                <FaTimes size={30} className="text-primary hover:text-black" />
                 <p className="text-[12px]">Menu</p>
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center">
-                <FaBars size={30} className="text-red-500 hover:text-black" />
+              <div className="flex items-center gap-2 justify-between">
+                <FaBars size={30} className="text-primary hover:text-black" />
                 <p className="text-[12px]">Menu</p>
               </div>
             )}
